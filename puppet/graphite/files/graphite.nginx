@@ -1,0 +1,15 @@
+server {
+        listen   80 default;
+        server_name  $server_name;
+
+        access_log  /var/log/nginx/graphite.access.log;
+
+        # http://flask.pocoo.org/docs/deploying/uwsgi/
+        # http://readthedocs.org/docs/uwsgi/en/latest/features/magic-variables.html
+        # http://readthedocs.org/docs/uwsgi/en/latest/examples.html
+
+        location / {
+            include uwsgi_params;
+            uwsgi_pass  127.0.0.1:3031;
+        }
+}
