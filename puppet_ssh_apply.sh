@@ -28,11 +28,10 @@ eval set -- "${FLAGS_ARGV}"
 host=$1
 
 
-RSYNC_COMMAND="rsync -rv"
+RSYNC_COMMAND="rsync -rv $folder $host:/tmp/"
 if [ "${FLAGS_key}"  != "" ]; then
-  RSYNC_COMMAND="$RSYNC_COMMAND -e \"ssh -i ${FLAGS_key}\""
+  export RSYNC_RSH="ssh -i ${FLAGS_key}"
 fi
-RSYNC_COMMAND="$RSYNC_COMMAND $folder $host:/tmp/"
 
 
 SSH_COMMAND="ssh"
