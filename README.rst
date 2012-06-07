@@ -82,4 +82,12 @@ consider switching:
     
 The initial graphite-web user is not created correctly. We either need to ship
 a Python script to e run by Puppet, or create a fixture file before running
-syncdb,.
+syncdb.
+
+Other links of interest:
+
+https://github.com/obfuscurity/backstop
+    Alternative to statsd
+
+https://github.com/paperlesspost/graphiti
+    Better UI for Graphite.
